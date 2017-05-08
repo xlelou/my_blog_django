@@ -15,11 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import *
 from django.contrib import admin
-from article import views
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.home), 
-    url(r'^(?P<my_args>\d+)/$', views.details, name = 'detail'),
-    url(r'^test/$', views.test),
+    url(r'^my/', include(admin.site.urls)),
+    url(r'^',include('article.urls',namespace='article')),
 ]
+ 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -19,20 +19,38 @@
     <div id="layout" class="pure-g">
         <div class="sidebar pure-u-1 pure-u-md-1-4">
             <div class="header">
-                <h1 class="brand-title">xlelou的博客</h1>
-                <h2 class="brand-tagline">风继续吹,不忍远离</h2>
+                <h1 class="brand-title"><a href="{% url 'article:home' %}">xlelou</a></h1>
+                <h2 class="brand-tagline">xlelou</h2>
                 <nav class="nav">
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a class="pure-button" href="https://github.com/Andrew-liu">Github</a>
+                            <a class="button-success pure-button" href="/">主页</a>
                         </li>
                         <li class="nav-item">
-                            <a class="pure-button" href="http://weibo.com/dinosaurliu">Weibo</a>
+                            <a class="button-success pure-button" href="/">归档</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button" href="https://github.com/Andrew-liu/my_blog_tutorial">Github</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="button-error pure-button" href="http://weibo.com/dinosaurliu">Weibo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="button-success pure-button" href="/">专题</a>
+                        </li>
+                        <li>
+                            <form class="pure-form" action="/search/" method="get">
+                                <input class="pure-input-3-3" type="text" name="s" placeholder="search">
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <a class="button-success pure-button" href="/">About Me</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </div>
+
 
         <div class="content pure-u-1 pure-u-md-3-4">
             <div>
@@ -40,7 +58,7 @@
                 <div class="footer">
                     <div class="pure-menu pure-menu-horizontal pure-menu-open">
                         <ul>
-                            <li><a href="http://andrewliu.tk/about/">About Me</a></li>
+                            <li><a href="{% url 'article:aboutme'%}">About Me</a></li>
                             <li><a href="http://twitter.com/yuilibrary/">Twitter</a></li>
                             <li><a href="http://github.com/yahoo/pure/">GitHub</a></li>
                         </ul>
